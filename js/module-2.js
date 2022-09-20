@@ -61,3 +61,48 @@
 //   return numbers;
 // }
 // console.log(getEvenNumbers(2, 5));
+
+// Модуль №2 task 30/32
+// Доповни код таким чином, щоб у змінну number
+// записувалося перше число від start до end, яке ділиться на 5 без остачі.
+
+// const start = 6;
+// const end = 27;
+// let number;
+
+// for (let i = start; i < end; i += 1) {
+//   if (i % 5 === 0) {
+//     number = i;
+//     break;
+//   }
+// }
+
+// Модуль №2 task 32/32
+// Напиши функцію includes(array, value), яка робить те саме,
+// що і метод масиву масив.includes(значення) - перевіряє,
+// чи присутнє в масиві array значення value, повертаючи true,
+// якщо присутнє, і false в іншому випадку.
+
+// При виконанні цього завдання в тілі функції includes()
+// не можна використовувати метод масив.includes(значення).
+
+// function includes(array, value) {
+//   // вирішення №1
+//   for (let i = 0; i < array.length; i += 1) {
+//     if (array[i] === value) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+// // вирішення №2
+// function includes(array, value) {
+//   for (const element of array) {
+//     if (element === array) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+// console.log(includes([1, 2, 3, 4, 5], 17));
+// console.log(includes([1, 2, 3, 4, 5], 3));
