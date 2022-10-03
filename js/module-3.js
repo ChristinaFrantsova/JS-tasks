@@ -49,6 +49,71 @@
 //         return 'Такої транзакції не існує'
 //     }
 // }
+// ------------------------------------Доповнення до задачі та що вище------------------------------
+
+// ? Додайте об'єкту обліковий запис методами записом (натисканням, навипадком, наError) і deposit(натисканням, надослідження, навідповідь),
+// ? де перший параметр це сума операції, а другий і третій - колбеки.
+// ? Метод withdraw викликає:
+// ? onError(`Amount should not exceed ${TRANSACTION_LIMIT} credits`) якщо amount більше TRANSACTION_LIMIT
+// ? onError(`Amount can't exceed account balance of ${this.balance} credits`) якщо amount більше this.balance
+// ? інакше знімаємо гроші з балансу і викликаємо onSuccess(`Account balance: ${this.balance}`)
+// ? Метод deposit викликає:
+// ? onError(`Amount should not exceed ${TRANSACTION_LIMIT} credits`) якщо amount більше TRANSACTION_LIMIT
+// ? onError(`Amount must be more than 0 credits`) якщо amount менше або дорівнює нулю
+//     ? інакше додаємо до балансу amount і викликаємо onSuccess(`Account balance: ${this.balance}`)
+
+//     const account = {
+//   balance: 0,
+//   transactions: [],
+//   createTransaction(amount, type) {
+//     return {
+//       amount,
+//       type,
+//       id: Math.random() * 6554
+//     };
+//   },
+//   deposit(amount, onSuccess, onError) {
+//     if (amount > transactionLimit) {
+//       onError(`Amount should not exceed ${transactionLimit} credits`);
+//     } else if (amount <= 0) {
+//       onError(`Amount must be more than 0 credits`);
+//     } else {
+//       this.balance += amount;
+//       this.transactions.push(this.createTransaction(amount, Transaction.DEPOSIT));
+//       onSuccess(`Account balance: ${this.balance}`);
+//     }
+//   },
+//   withdraw(amount, onSuccess, onError) {
+//     if (amount > transactionLimit) {
+//       onError(`Amount should not exceed ${transactionLimit} credits`);
+//     } else if (amount > this.balance) {
+//       onError(`Amount can't exceed account balance of ${this.balance} credits`);
+//     } else {
+//       this.balance -= amount;
+//       this.transactions.push(this.createTransaction(amount, Transaction.WITHDRAW));
+//       onSuccess(`Account balance: ${this.balance}`);
+//     }
+//   },
+//   getBalance() {
+//     return this.balance;
+//   },
+//   getTransactionHistory() {
+//     return this.transactions;
+//   },
+//   getTransactionDetails(id) {
+//     for (let transaction of this.transactions) {
+//       if (transaction.id === id) {
+//         return transaction;
+//       }
+//     }
+//     return 'Такої транзакції не існує';
+//   }
+// };
+
+// const handleSuccess = (message) => console.log(`✅ Success! ${message}`);
+
+// const handleError = (message) => console.log(`❌ Error! ${message}`);
+
 //                                         Задача 2
 // ? У нас є об'єкт salaries із зарплатами:
 // ? Створіть функцію topSalary (salaries), яка повертає ім'я найдорожчого працівника.
